@@ -37,6 +37,7 @@ Partial Class Form1
         Label5 = New Label()
         pnl_automatedIndicator = New Panel()
         btn_automatedEnabled = New Button()
+        chk_startMinimized = New CheckBox()
         chk_automated_runStart = New CheckBox()
         Label3 = New Label()
         lblInterval = New Label()
@@ -130,6 +131,7 @@ Partial Class Form1
         Panel1.Controls.Add(Label5)
         Panel1.Controls.Add(pnl_automatedIndicator)
         Panel1.Controls.Add(btn_automatedEnabled)
+        Panel1.Controls.Add(chk_startMinimized)
         Panel1.Controls.Add(chk_automated_runStart)
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(lblInterval)
@@ -144,10 +146,10 @@ Partial Class Form1
         ' 
         chk_popupnotificatons.AutoSize = True
         chk_popupnotificatons.Font = New Font("Segoe UI", 9F)
-        chk_popupnotificatons.Location = New Point(25, 86)
+        chk_popupnotificatons.Location = New Point(25, 105)
         chk_popupnotificatons.Name = "chk_popupnotificatons"
         chk_popupnotificatons.Size = New Size(132, 19)
-        chk_popupnotificatons.TabIndex = 13
+        chk_popupnotificatons.TabIndex = 14
         chk_popupnotificatons.Text = "Popup Notifications"
         chk_popupnotificatons.UseVisualStyleBackColor = True
         ' 
@@ -157,7 +159,7 @@ Partial Class Form1
         lblNextBackupDisplay.Location = New Point(94, 184)
         lblNextBackupDisplay.Name = "lblNextBackupDisplay"
         lblNextBackupDisplay.Size = New Size(17, 15)
-        lblNextBackupDisplay.TabIndex = 12
+        lblNextBackupDisplay.TabIndex = 13
         lblNextBackupDisplay.Text = "--"
         ' 
         ' Label5
@@ -175,7 +177,7 @@ Partial Class Form1
         pnl_automatedIndicator.Location = New Point(155, 152)
         pnl_automatedIndicator.Name = "pnl_automatedIndicator"
         pnl_automatedIndicator.Size = New Size(19, 21)
-        pnl_automatedIndicator.TabIndex = 9
+        pnl_automatedIndicator.TabIndex = 10
         ' 
         ' btn_automatedEnabled
         ' 
@@ -183,18 +185,29 @@ Partial Class Form1
         btn_automatedEnabled.Location = New Point(16, 150)
         btn_automatedEnabled.Name = "btn_automatedEnabled"
         btn_automatedEnabled.Size = New Size(133, 25)
-        btn_automatedEnabled.TabIndex = 8
+        btn_automatedEnabled.TabIndex = 9
         btn_automatedEnabled.Text = "Disabled"
         btn_automatedEnabled.UseVisualStyleBackColor = True
+        ' 
+        ' chk_startMinimized
+        ' 
+        chk_startMinimized.AutoSize = True
+        chk_startMinimized.Font = New Font("Segoe UI", 9.0F)
+        chk_startMinimized.Location = New Point(25, 67)
+        chk_startMinimized.Name = "chk_startMinimized"
+        chk_startMinimized.Size = New Size(140, 19)
+        chk_startMinimized.TabIndex = 8
+        chk_startMinimized.Text = "Start minimized (System tray)"
+        chk_startMinimized.UseVisualStyleBackColor = True
         ' 
         ' chk_automated_runStart
         ' 
         chk_automated_runStart.AutoSize = True
         chk_automated_runStart.Font = New Font("Segoe UI", 9F)
-        chk_automated_runStart.Location = New Point(25, 67)
+        chk_automated_runStart.Location = New Point(25, 86)
         chk_automated_runStart.Name = "chk_automated_runStart"
         chk_automated_runStart.Size = New Size(140, 19)
-        chk_automated_runStart.TabIndex = 8
+        chk_automated_runStart.TabIndex = 9
         chk_automated_runStart.Text = "Run on Program Start"
         chk_automated_runStart.UseVisualStyleBackColor = True
         ' 
@@ -204,7 +217,7 @@ Partial Class Form1
         Label3.Location = New Point(148, 46)
         Label3.Name = "Label3"
         Label3.Size = New Size(50, 15)
-        Label3.TabIndex = 10
+        Label3.TabIndex = 11
         Label3.Text = "Minutes"
         ' 
         ' lblInterval
@@ -213,7 +226,7 @@ Partial Class Form1
         lblInterval.Location = New Point(25, 44)
         lblInterval.Name = "lblInterval"
         lblInterval.Size = New Size(49, 15)
-        lblInterval.TabIndex = 8
+        lblInterval.TabIndex = 9
         lblInterval.Text = "Interval:"
         ' 
         ' numeric_automatedInterval
@@ -223,7 +236,7 @@ Partial Class Form1
         numeric_automatedInterval.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         numeric_automatedInterval.Name = "numeric_automatedInterval"
         numeric_automatedInterval.Size = New Size(62, 23)
-        numeric_automatedInterval.TabIndex = 9
+        numeric_automatedInterval.TabIndex = 10
         numeric_automatedInterval.Value = New Decimal(New Integer() {60, 0, 0, 0})
         ' 
         ' Label2
@@ -233,7 +246,7 @@ Partial Class Form1
         Label2.Location = New Point(16, 10)
         Label2.Name = "Label2"
         Label2.Size = New Size(193, 25)
-        Label2.TabIndex = 8
+        Label2.TabIndex = 9
         Label2.Text = "Backup Automatically"
         ' 
         ' Label4
@@ -243,7 +256,7 @@ Partial Class Form1
         Label4.Location = New Point(253, 9)
         Label4.Name = "Label4"
         Label4.Size = New Size(214, 30)
-        Label4.TabIndex = 8
+        Label4.TabIndex = 9
         Label4.Text = "Easy SQLite Backup"
         ' 
         ' Timer1
@@ -259,7 +272,7 @@ Partial Class Form1
         radio_vacumm.Location = New Point(47, 229)
         radio_vacumm.Name = "radio_vacumm"
         radio_vacumm.Size = New Size(121, 23)
-        radio_vacumm.TabIndex = 9
+        radio_vacumm.TabIndex = 10
         radio_vacumm.TabStop = True
         radio_vacumm.Text = "VACUUM INTO"
         radio_vacumm.UseVisualStyleBackColor = True
@@ -271,7 +284,7 @@ Partial Class Form1
         radio_filecopy.Location = New Point(48, 258)
         radio_filecopy.Name = "radio_filecopy"
         radio_filecopy.Size = New Size(92, 23)
-        radio_filecopy.TabIndex = 11
+        radio_filecopy.TabIndex = 12
         radio_filecopy.TabStop = True
         radio_filecopy.Text = "FILE COPY"
         radio_filecopy.UseVisualStyleBackColor = True
@@ -283,7 +296,7 @@ Partial Class Form1
         Label6.Location = New Point(42, 201)
         Label6.Name = "Label6"
         Label6.Size = New Size(131, 25)
-        Label6.TabIndex = 12
+        Label6.TabIndex = 13
         Label6.Text = "Backup Mode:"
         ' 
         ' chk_zipbackup
@@ -293,24 +306,24 @@ Partial Class Form1
         chk_zipbackup.Location = New Point(48, 173)
         chk_zipbackup.Name = "chk_zipbackup"
         chk_zipbackup.Size = New Size(187, 25)
-        chk_zipbackup.TabIndex = 13
+        chk_zipbackup.TabIndex = 14
         chk_zipbackup.Text = "Compress (zip) Backup"
         chk_zipbackup.UseVisualStyleBackColor = True
         ' 
         ' NotifyIcon1
         ' 
         NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), Icon)
-        NotifyIcon1.Text = "NotifyIcon1"
+        NotifyIcon1.Text = "Easy SQL Backup"
         NotifyIcon1.Visible = True
         ' 
         ' chk_writeLog
         ' 
         chk_writeLog.AutoSize = True
         chk_writeLog.Font = New Font("Segoe UI", 9F)
-        chk_writeLog.Location = New Point(25, 105)
+        chk_writeLog.Location = New Point(25, 124)
         chk_writeLog.Name = "chk_writeLog"
         chk_writeLog.Size = New Size(92, 19)
-        chk_writeLog.TabIndex = 14
+        chk_writeLog.TabIndex = 15
         chk_writeLog.Text = "Write To Log"
         chk_writeLog.UseVisualStyleBackColor = True
         ' 
@@ -350,6 +363,7 @@ Partial Class Form1
     Friend WithEvents btnBackupNow As Button
     Friend WithEvents btnSaveConfig As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents chk_startMinimized As CheckBox
     Friend WithEvents chk_automated_runStart As CheckBox
     Friend WithEvents Label3 As Label
     Friend WithEvents lblInterval As Label

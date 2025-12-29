@@ -16,6 +16,9 @@ Public Class Form1
         LoadConfiguration()
         NotifyIcon1.Visible = True
         WriteToLog("test")
+        If chk_automated_runStart.Checked = False Then
+            Me.WindowState = FormWindowState.Minimized
+        End If
     End Sub
 
     Private Sub BackupDatabase(ByVal sourcelocation As String, ByVal backuplocation As String, ByVal silent As Boolean, ByVal appendtimestamp As Boolean, ByVal writelog As Boolean, ByVal zip As Boolean)
@@ -227,6 +230,7 @@ Public Class Form1
                 writer.WriteLine("BackupFolderPath=" & txtBackupLocation.Text)
                 writer.WriteLine("AppendTimestamp=" & chk_appendTimeStamp.Checked)
                 writer.WriteLine("AutomatedInterval=" & numeric_automatedInterval.Value)
+                writer.WriteLine("StartMinimized=" & chk_startMinimized.Checked)
                 writer.WriteLine("AutomatedAutoRun=" & chk_automated_runStart.Checked)
                 writer.WriteLine("BackupMode=" & backupmode)
                 writer.WriteLine("CompressBackup=" & chk_zipbackup.Checked)
@@ -258,6 +262,8 @@ Public Class Form1
                             chk_appendTimeStamp.Checked = value
                         ElseIf key = "AutomatedInterval" Then
                             numeric_automatedInterval.Value = value
+                        ElseIf key = "startMinimized" Then
+                            chk_startMinimized.Checked = value
                         ElseIf key = "AutomatedAutoRun" Then
                             chk_automated_runStart.Checked = value
                         ElseIf key = "BackupMode" Then
@@ -395,6 +401,7 @@ Public Class Form1
         If Me.WindowState = FormWindowState.Minimized Then
             NotifyIcon1.Visible = True
             Me.ShowInTaskbar = False
+            Me.Hide()
         Else
             NotifyIcon1.Visible = False
             Me.ShowInTaskbar = True
