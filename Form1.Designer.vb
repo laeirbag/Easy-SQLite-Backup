@@ -32,6 +32,7 @@ Partial Class Form1
         btnBackupNow = New Button()
         btnSaveConfig = New Button()
         Panel1 = New Panel()
+        chk_writeLog = New CheckBox()
         chk_popupnotificatons = New CheckBox()
         lblNextBackupDisplay = New Label()
         Label5 = New Label()
@@ -50,14 +51,13 @@ Partial Class Form1
         Label6 = New Label()
         chk_zipbackup = New CheckBox()
         NotifyIcon1 = New NotifyIcon(components)
-        chk_writeLog = New CheckBox()
         Panel1.SuspendLayout()
         CType(numeric_automatedInterval, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' txtSourceLocation
         ' 
-        txtSourceLocation.Font = New Font("Segoe UI", 9F)
+        txtSourceLocation.Font = New Font("Segoe UI", 9.0F)
         txtSourceLocation.Location = New Point(47, 62)
         txtSourceLocation.Name = "txtSourceLocation"
         txtSourceLocation.Size = New Size(657, 23)
@@ -66,7 +66,7 @@ Partial Class Form1
         ' lblSource
         ' 
         lblSource.AutoSize = True
-        lblSource.Font = New Font("Segoe UI", 14F)
+        lblSource.Font = New Font("Segoe UI", 14.0F)
         lblSource.Location = New Point(47, 34)
         lblSource.Name = "lblSource"
         lblSource.Size = New Size(108, 25)
@@ -76,7 +76,7 @@ Partial Class Form1
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 14F)
+        Label1.Font = New Font("Segoe UI", 14.0F)
         Label1.Location = New Point(42, 89)
         Label1.Name = "Label1"
         Label1.Size = New Size(154, 25)
@@ -85,7 +85,7 @@ Partial Class Form1
         ' 
         ' txtBackupLocation
         ' 
-        txtBackupLocation.Font = New Font("Segoe UI", 9F)
+        txtBackupLocation.Font = New Font("Segoe UI", 9.0F)
         txtBackupLocation.Location = New Point(48, 117)
         txtBackupLocation.Name = "txtBackupLocation"
         txtBackupLocation.Size = New Size(657, 23)
@@ -96,7 +96,7 @@ Partial Class Form1
         chk_appendTimeStamp.AutoSize = True
         chk_appendTimeStamp.Checked = True
         chk_appendTimeStamp.CheckState = CheckState.Checked
-        chk_appendTimeStamp.Font = New Font("Segoe UI", 12F)
+        chk_appendTimeStamp.Font = New Font("Segoe UI", 12.0F)
         chk_appendTimeStamp.Location = New Point(48, 148)
         chk_appendTimeStamp.Name = "chk_appendTimeStamp"
         chk_appendTimeStamp.Size = New Size(283, 25)
@@ -142,10 +142,21 @@ Partial Class Form1
         Panel1.Size = New Size(225, 206)
         Panel1.TabIndex = 7
         ' 
+        ' chk_writeLog
+        ' 
+        chk_writeLog.AutoSize = True
+        chk_writeLog.Font = New Font("Segoe UI", 9.0F)
+        chk_writeLog.Location = New Point(25, 124)
+        chk_writeLog.Name = "chk_writeLog"
+        chk_writeLog.Size = New Size(92, 19)
+        chk_writeLog.TabIndex = 15
+        chk_writeLog.Text = "Write To Log"
+        chk_writeLog.UseVisualStyleBackColor = True
+        ' 
         ' chk_popupnotificatons
         ' 
         chk_popupnotificatons.AutoSize = True
-        chk_popupnotificatons.Font = New Font("Segoe UI", 9F)
+        chk_popupnotificatons.Font = New Font("Segoe UI", 9.0F)
         chk_popupnotificatons.Location = New Point(25, 105)
         chk_popupnotificatons.Name = "chk_popupnotificatons"
         chk_popupnotificatons.Size = New Size(132, 19)
@@ -195,7 +206,7 @@ Partial Class Form1
         chk_startMinimized.Font = New Font("Segoe UI", 9.0F)
         chk_startMinimized.Location = New Point(25, 67)
         chk_startMinimized.Name = "chk_startMinimized"
-        chk_startMinimized.Size = New Size(140, 19)
+        chk_startMinimized.Size = New Size(181, 19)
         chk_startMinimized.TabIndex = 8
         chk_startMinimized.Text = "Start minimized (System tray)"
         chk_startMinimized.UseVisualStyleBackColor = True
@@ -203,7 +214,7 @@ Partial Class Form1
         ' chk_automated_runStart
         ' 
         chk_automated_runStart.AutoSize = True
-        chk_automated_runStart.Font = New Font("Segoe UI", 9F)
+        chk_automated_runStart.Font = New Font("Segoe UI", 9.0F)
         chk_automated_runStart.Location = New Point(25, 86)
         chk_automated_runStart.Name = "chk_automated_runStart"
         chk_automated_runStart.Size = New Size(140, 19)
@@ -242,7 +253,7 @@ Partial Class Form1
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 14F)
+        Label2.Font = New Font("Segoe UI", 14.0F)
         Label2.Location = New Point(16, 10)
         Label2.Name = "Label2"
         Label2.Size = New Size(193, 25)
@@ -252,7 +263,7 @@ Partial Class Form1
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
+        Label4.Font = New Font("Segoe UI", 16.0F, FontStyle.Bold)
         Label4.Location = New Point(253, 9)
         Label4.Name = "Label4"
         Label4.Size = New Size(214, 30)
@@ -268,7 +279,7 @@ Partial Class Form1
         ' 
         radio_vacumm.AutoSize = True
         radio_vacumm.Checked = True
-        radio_vacumm.Font = New Font("Segoe UI", 10F)
+        radio_vacumm.Font = New Font("Segoe UI", 10.0F)
         radio_vacumm.Location = New Point(47, 229)
         radio_vacumm.Name = "radio_vacumm"
         radio_vacumm.Size = New Size(121, 23)
@@ -280,7 +291,7 @@ Partial Class Form1
         ' radio_filecopy
         ' 
         radio_filecopy.AutoSize = True
-        radio_filecopy.Font = New Font("Segoe UI", 10F)
+        radio_filecopy.Font = New Font("Segoe UI", 10.0F)
         radio_filecopy.Location = New Point(48, 258)
         radio_filecopy.Name = "radio_filecopy"
         radio_filecopy.Size = New Size(92, 23)
@@ -292,7 +303,7 @@ Partial Class Form1
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI", 14F)
+        Label6.Font = New Font("Segoe UI", 14.0F)
         Label6.Location = New Point(42, 201)
         Label6.Name = "Label6"
         Label6.Size = New Size(131, 25)
@@ -302,7 +313,7 @@ Partial Class Form1
         ' chk_zipbackup
         ' 
         chk_zipbackup.AutoSize = True
-        chk_zipbackup.Font = New Font("Segoe UI", 12F)
+        chk_zipbackup.Font = New Font("Segoe UI", 12.0F)
         chk_zipbackup.Location = New Point(48, 173)
         chk_zipbackup.Name = "chk_zipbackup"
         chk_zipbackup.Size = New Size(187, 25)
@@ -315,17 +326,6 @@ Partial Class Form1
         NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), Icon)
         NotifyIcon1.Text = "Easy SQL Backup"
         NotifyIcon1.Visible = True
-        ' 
-        ' chk_writeLog
-        ' 
-        chk_writeLog.AutoSize = True
-        chk_writeLog.Font = New Font("Segoe UI", 9F)
-        chk_writeLog.Location = New Point(25, 124)
-        chk_writeLog.Name = "chk_writeLog"
-        chk_writeLog.Size = New Size(92, 19)
-        chk_writeLog.TabIndex = 15
-        chk_writeLog.Text = "Write To Log"
-        chk_writeLog.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 

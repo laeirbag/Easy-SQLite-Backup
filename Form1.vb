@@ -16,7 +16,7 @@ Public Class Form1
         LoadConfiguration()
         NotifyIcon1.Visible = True
         WriteToLog("test")
-        If chk_automated_runStart.Checked = False Then
+        If chk_startMinimized.Checked = False Then
             Me.WindowState = FormWindowState.Minimized
         End If
     End Sub
@@ -262,7 +262,7 @@ Public Class Form1
                             chk_appendTimeStamp.Checked = value
                         ElseIf key = "AutomatedInterval" Then
                             numeric_automatedInterval.Value = value
-                        ElseIf key = "startMinimized" Then
+                        ElseIf key = "StartMinimized" Then
                             chk_startMinimized.Checked = value
                         ElseIf key = "AutomatedAutoRun" Then
                             chk_automated_runStart.Checked = value
