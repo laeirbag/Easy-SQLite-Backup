@@ -16,7 +16,7 @@ Public Class Form1
         LoadConfiguration()
         NotifyIcon1.Visible = True
         WriteToLog("test")
-        If chk_startMinimized.Checked = False Then
+        If chk_startMinimized.Checked Then
             Me.WindowState = FormWindowState.Minimized
         End If
     End Sub
